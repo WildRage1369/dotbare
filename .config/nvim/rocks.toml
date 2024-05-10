@@ -1,0 +1,104 @@
+# List of non-Neovim rocks.
+# This includes things like `toml` or other lua packages.
+[rocks]
+
+# List of Neovim plugins to install alongside their versions.
+# If the plugin name contains a dot then you must add quotes to the key name!
+[plugins]
+"rocks.nvim" = "2.24.0"
+"rocks-config.nvim" = "1.5.0"
+"rocks-git.nvim" = "1.4.0"
+"rocks-treesitter.nvim" = "scm"
+"venn.nvim" = "scm"
+"rainbow-delimiters.nvim" = "0.3.0"
+tree-sitter-toml = "scm"
+"gruvbox.nvim" = "2.0.0"
+neorg = "8.4.0"
+nvim-autopairs = "scm"
+"mini.nvim" = "0.9.0"
+"mini.files" = "0.12.0"
+"mini.animate" = "0.9.0"
+"mini.comment" = "0.9.0"
+"mini.move" = "0.9.0"
+luasnip = { git = "L3MON4D3/LuaSnip", build = "make install_jsregexp", opt = true}
+"lspkind.nvim" = { git = "onsails/lspkind.nvim",  opt = true}
+cmp-tabnine = { git = "tzachar/cmp-tabnine", build = "./install.sh", opt = true }
+"conform.nvim" = "5.6.0"
+nvim-lspconfig = "0.1.7"
+"dressing.nvim" = "2.2.0"
+"sqlite.lua" = "1.2.2"
+"nabla.nvim" = "scm"
+tree-sitter-yaml = "scm"
+nvim-cokeline =  "0.4.0"
+nvim-cmp = { git = "hrsh7th/nvim-cmp", version = "0.0.1" }
+nvim-treesitter = { git = "nvim-treesitter/nvim-treesitter", rev = "v0.9.2^{}" }
+nvim-surround = { version = "2.1.5", config = true }
+"mason.nvim" = { version = "1.10.0", opt = true, config = true }
+cmp_luasnip = "scm"
+tree-sitter-xml = "scm"
+tree-sitter-ini = "scm"
+cmp-buffer = "scm"
+tree-sitter-zig = "scm"
+tree-sitter-json = "scm"
+"hover.nvim" = "scm"
+tree-sitter-css = "scm"
+
+[plugins."marks.nvim" ]
+version = "scm"
+config = true
+
+[plugins.cmp-nvim-lsp ]
+git = "hrsh7th/cmp-nvim-lsp"
+
+[plugins."mason-lspconfig.nvim"]
+version = "1.27.0"
+opt = true
+config.ensure_installed = ["lua_ls", "clangd", "bashls", "cssls", "diagnosticls", "html", "jdtls", "jsonls", "quick_lint_js", "ltex", "marksman", "pyright"]
+
+[plugins."pretty-fold.nvim"]
+version = "3.0"
+config.fill_char = " "
+config.keep_indent = false
+config.sections.left = ["", "content", " ", "number_of_folded_lines"]
+config.sections.right = ["percentage", " "]
+
+[plugins."which-key.nvim"]
+version = "1.6.0"
+# config.triggers = [ "<leader>", "d", "y"]
+# config.window.border = "single"
+
+[plugins.nvim-neoclip]
+name = "nvim-neoclip"
+git = "AckslD/nvim-neoclip.lua"
+config.default_register = '*'
+config.enable_persistent_history = true
+config.continuous_sync = true
+config.content_spec_column = true
+config.keys.telescope.i.paste = "<CR>"
+
+[plugins."lualine.nvim"]
+version = "scm"
+config.icons_enabled = true
+config.theme = "auto"
+
+[plugins."telescope.nvim"]
+version = "scm"
+# config.defaults.mappings.i = { "<esc>" = "close" }
+config.defaults.layout_config.vertical = { width = 0.9, preview_height = 0.3 }
+config.defaults.layout_strategy = "vertical"
+
+[plugins.cmp-async-path]
+git = "FelipeLema/cmp-async-path"
+
+[plugins."zig.vim"]
+git = "ziglang/zig.vim"
+
+[plugins.nvim-gdb]
+git = "sakhnik/nvim-gdb"
+
+[config]
+plugins_dir = "plugins/"
+auto_setup = false
+
+[treesitter]
+auto_highlight = "all"
