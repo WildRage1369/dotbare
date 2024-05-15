@@ -1,14 +1,24 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
+SETUVAR --export ABBR_TIPS_PROMPT:\x5cn\U0001f4a1\x20\x5ce\x5b1m\x7b\x7b\x20\x2eabbr\x20\x7d\x7d\x5ce\x5b0m\x20\x3d\x3e\x20\x7b\x7b\x20\x2ecmd\x20\x7d\x7d
+SETUVAR --export ABBR_TIPS_REGEXES:\x28\x5e\x28\x5cw\x2b\x5cs\x2b\x29\x2b\x28\x2d\x7b1\x2c2\x7d\x29\x5cw\x2b\x29\x28\x5cs\x5cS\x2b\x29\x1e\x28\x5e\x28\x5cs\x3f\x28\x5cw\x2d\x3f\x29\x2b\x29\x7b3\x7d\x29\x2e\x2a\x1e\x28\x5e\x28\x5cs\x3f\x28\x5cw\x2d\x3f\x29\x2b\x29\x7b2\x7d\x29\x2e\x2a\x1e\x28\x5e\x28\x5cs\x3f\x28\x5cw\x2d\x3f\x29\x2b\x29\x7b1\x7d\x29\x2e\x2a
 SETUVAR --export CM_LAUNCHER:rofi
 SETUVAR --export CM_SELECTIONS:clipboard
 SETUVAR --export EDITOR:/home/maxine/\x2elocal/share/bob/nvim\x2dbin/nvim
 SETUVAR SXHKD_SHELL:sh
-SETUVAR __fish_initialized:3100
+SETUVAR --export __ABBR_TIPS_KEYS:a__bcat\x1ea__cd\x1ea__cdi\x1ea__fzfind\x1ea__ls\x1ea__neorgd\x1ea__neorgs\x1ea__serial
+SETUVAR --export __ABBR_TIPS_VALUES:batcat\x1e__zoxide_z\x1e__zoxide_zi\x1efzf\x5c\x5c\x5c\x20\x2d\x2dborder\x3drounded\x5c\x5c\x5c\x20\x2d\x2dmargin\x3d1\x2c3\x5c\x5c\x5c\x20\x2d\x2dinfo\x3dright\x5c\x5c\x5c\x20\x2d\x2dpreview\x3d\x5c\x5c\x5c\x27batcat\x5c\x5c\x5c\x20\x2d\x2dcolor\x3dalw\x5c\x5cnays\x5c\x5c\x5c\x20\x5c\x5c\x5c\x7b\x5c\x5c\x5c\x7d\x5c\x5c\x5c\x20\x2d\x2dstyle\x3dplain\x5c\x5c\x5c\x27\x5c\x5c\x5c\x20\x2d\x2dpreview\x2dwindow\x3dup\x2c10\x1elsd\x1envim\x5c\x5c\x5c\x20\x2dc\x5c\x5c\x5c\x20\x5c\x5c\x5c\x27Neorg\x5c\x5c\x5c\x20workspace\x5c\x5c\x5c\x20documents\x5c\x5c\x5c\x1envim\x5c\x5c\x5c\x20\x2dc\x5c\x5c\x5c\x20\x5c\x5c\x5c\x27Neorg\x5c\x5c\x5c\x20workspace\x5c\x5c\x5c\x20school\x5c\x5c\x5c\x1esudo\x20minicom\x20\x2db\x20115200\x20\x2do\x20\x2dD
+SETUVAR __fish_initialized:3400
+SETUVAR _fisher_decors_2F_fish_2D_colored_2D_man_files:\x7e/\x2econfig/fish/functions/man\x2efish
+SETUVAR _fisher_gazorby_2F_fish_2D_abbreviation_2D_tips_files:\x7e/\x2econfig/fish/functions/__abbr_tips_bind_newline\x2efish\x1e\x7e/\x2econfig/fish/functions/__abbr_tips_bind_space\x2efish\x1e\x7e/\x2econfig/fish/functions/__abbr_tips_clean\x2efish\x1e\x7e/\x2econfig/fish/functions/__abbr_tips_init\x2efish\x1e\x7e/\x2econfig/fish/conf\x2ed/abbr_tips\x2efish
+SETUVAR _fisher_jorgebucaran_2F_autopair_2E_fish_files:\x7e/\x2econfig/fish/functions/_autopair_backspace\x2efish\x1e\x7e/\x2econfig/fish/functions/_autopair_insert_left\x2efish\x1e\x7e/\x2econfig/fish/functions/_autopair_insert_right\x2efish\x1e\x7e/\x2econfig/fish/functions/_autopair_insert_same\x2efish\x1e\x7e/\x2econfig/fish/functions/_autopair_tab\x2efish\x1e\x7e/\x2econfig/fish/conf\x2ed/autopair\x2efish
 SETUVAR _fisher_jorgebucaran_2F_fisher_files:\x7e/\x2econfig/fish/functions/fisher\x2efish\x1e\x7e/\x2econfig/fish/completions/fisher\x2efish
 SETUVAR _fisher_jorgebucaran_2F_nvm_2E_fish_files:\x7e/\x2econfig/fish/functions/_nvm_index_update\x2efish\x1e\x7e/\x2econfig/fish/functions/_nvm_list\x2efish\x1e\x7e/\x2econfig/fish/functions/_nvm_version_activate\x2efish\x1e\x7e/\x2econfig/fish/functions/_nvm_version_deactivate\x2efish\x1e\x7e/\x2econfig/fish/functions/nvm\x2efish\x1e\x7e/\x2econfig/fish/conf\x2ed/nvm\x2efish\x1e\x7e/\x2econfig/fish/completions/nvm\x2efish
+SETUVAR _fisher_kpbaks_2F_ctrl_2D_z_2E_fish_files:\x7e/\x2econfig/fish/conf\x2ed/ctrl\x2dz\x2efish
+SETUVAR _fisher_lumakernel_2F_fish_2D_fd_2D_complete_files:\x7e/\x2econfig/fish/completions/fd\x2efish
 SETUVAR _fisher_oh_2D_my_2D_fish_2F_plugin_2D_bang_2D_bang_files:\x7e/\x2econfig/fish/functions/__history_previous_command\x2efish\x1e\x7e/\x2econfig/fish/functions/__history_previous_command_arguments\x2efish\x1e\x7e/\x2econfig/fish/conf\x2ed/plugin\x2dbang\x2dbang\x2efish
-SETUVAR _fisher_plugins:jorgebucaran/fisher\x1ejorgebucaran/nvm\x2efish\x1eoh\x2dmy\x2dfish/plugin\x2dbang\x2dbang
+SETUVAR _fisher_patrickf1_2F_fzf_2E_fish_files:\x7e/\x2econfig/fish/functions/_fzf_configure_bindings_help\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_extract_var_info\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_preview_changed_file\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_preview_file\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_report_diff_type\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_report_file_type\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_search_directory\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_search_git_log\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_search_git_status\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_search_history\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_search_processes\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_search_variables\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_wrapper\x2efish\x1e\x7e/\x2econfig/fish/functions/fzf_configure_bindings\x2efish\x1e\x7e/\x2econfig/fish/conf\x2ed/fzf\x2efish\x1e\x7e/\x2econfig/fish/completions/fzf_configure_bindings\x2efish
+SETUVAR _fisher_plugins:jorgebucaran/fisher\x1ejorgebucaran/nvm\x2efish\x1eoh\x2dmy\x2dfish/plugin\x2dbang\x2dbang\x1epatrickf1/fzf\x2efish\x1ejorgebucaran/autopair\x2efish\x1egazorby/fish\x2dabbreviation\x2dtips\x1edecors/fish\x2dcolored\x2dman\x1elumakernel/fish\x2dfd\x2dcomplete\x1ekpbaks/ctrl\x2dz\x2efish
 SETUVAR _fisher_upgraded_to_4_4:\x1d
 SETUVAR fish_color_autosuggestion:555\x1ebrblack
 SETUVAR fish_color_cancel:\x2dr
@@ -38,5 +48,6 @@ SETUVAR fish_pager_color_completion:\x1d
 SETUVAR fish_pager_color_description:B3A06D\x1eyellow
 SETUVAR fish_pager_color_prefix:normal\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
+SETUVAR fish_pager_color_selected_background:\x2dr
 SETUVAR fish_user_paths:/home/maxine/Software/dotbare\x1e/home/maxine/Software/zig\x1e/home/maxine/\x2elocal/share/bob/nvim\x2dbin\x1e/home/maxine/Software/lua\x2dlanguage\x2dserver/bin\x1e/home/maxine/micromamba/condabin\x1e/home/maxine/\x2efzf/bin
 SETUVAR nvm_default_version:v21\x2e5\x2e0
