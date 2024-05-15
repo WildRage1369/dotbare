@@ -1,0 +1,5 @@
+{
+	"warn_style": true,
+	"highlight_global_var_declarations": true,
+	"prefer_ast_check_as_child_process": false
+}

@@ -19,9 +19,9 @@ configuration {
 /*	drun-categories: ;*/
 /*	drun-show-actions: false;*/
 /*	drun-display-format: "{name} [<span weight='light' size='small'><i>({generic})</i></span>]";*/
-    combi-display-format: "{text}";
+/*  combi-display-format: "{text}";*/
 /*	drun-url-launcher: "xdg-open";*/
-	disable-history: true;
+	/*disable-history: false;*/
 /*	ignored-prefixes: "";*/
 	sort: true;
 	sorting-method: "fzf";

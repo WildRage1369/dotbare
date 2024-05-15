@@ -64,10 +64,10 @@ require("gruvbox").setup({
 vim.cmd("colorscheme gruvbox")
 
 -- resize vim windows when the terminal window is resized
-autocmd("VimResized", {
-    pattern = "*",
-    command = "tabdo wincmd =",
-})
+-- autocmd("VimResized", {
+--     pattern = "*",
+--     command = "tabdo wincmd =",
+-- })
 
 -- Set spell and wrap on for text files, otherwise set nospell and nowrap
 autocmd("FileType", {

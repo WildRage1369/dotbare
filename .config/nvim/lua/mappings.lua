@@ -13,7 +13,7 @@ vim.g.mapleader = " " -- 'vim.g' sets global variables
 vim.keymap.set("n", "<MouseMove>", require("hover").hover_mouse, { desc = "hover.nvim (mouse)" })
 vim.keymap.set("i", "<MouseMove>", require("hover").hover_mouse, { desc = "hover.nvim (mouse)" })
 vim.o.mousemoveevent = true
-map_key("n", "ns", require("hover").hover_switch("next"), "hover.nvim (next source)")
+map_key("n", "<leader>ns", require("hover").hover_switch("next"), "hover.nvim (next source)")
 
 -- map_key("n", "", "", "")
 -- map_key("n", "", vim.lsp.buf.code_action, "LSP Code Actions")
@@ -76,4 +76,4 @@ map_key("n", "<Up>", "gk")
 map_key("n", "<C-Right>", "e")
 map_key("n", "<C-Left>", "b")
 
-map_key("t", "<esc>", "<C-\\><C-n>", "", true)
+map_key("t", "jk", "<C-\\><C-n>", "", true)

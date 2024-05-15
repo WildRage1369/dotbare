@@ -1,0 +1,36 @@
+format = '''
+(dimmed cyan)$username in (bold white)$directory $c$lua$zig$time$cmd_duration$status
+[└─>](dimmed cyan)'''
+
+
+[username]
+style_user = "red dimmed italic"
+style_root = "black bold"
+format = "[$user]($style)"
+disabled = false
+show_always = true
+
+[c]
+symbol = " "
+
+[lua]
+symbol = " "
+
+[memory_usage]
+symbol = " "
+
+[directory]
+read_only = " "
+format = "[$path](bold green)"
+
+[status]
+format = '[$symbol $status]($style) ' 
+disabled = false
+
+[zig]
+symbol = '󱐋 '
+detect_folders = ['zig']
+
+[time]
+disabled = false
+time_format = '%-I:%M.%-S'

@@ -26,4 +26,13 @@ require("mason-lspconfig").setup_handlers({
             settings = { zls = { warn_style = true } },
         })
     end,
+
+	["pyright"] = function()
+		require("lspconfig").pyright.setup({
+			settings = { pyright = {
+				reportPossiblyUnboundVariable = false,
+				reportUnboundVariable = false,
+			} }
+		})
+	end,
 })

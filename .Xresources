@@ -1,0 +1,19 @@
+Xft.dpi: 100
+Xcursor.size: 16
+
+*.color0: #212121 
+*.color1: #5A9E4E 
+*.color2: #4E5B18 
+*.color3: #304831 
+*.color4: #293B45 
+*.color5: #214408 
+*.color6: #384F47 
+*.color7: #9ca7a0 
+*.color8: #19360a 
+*.color9: #3c6307 
+*.color10: #6a7d17 
+*.color11: #366538 
+*.color12: #2e4e60 
+*.color13: #2a5d05 
+*.color14: #406f5e 
+*.color15: #d5e5db 

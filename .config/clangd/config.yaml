@@ -1,0 +1,19 @@
+CompileFlags:
+  Add: [-ferror-limit=0]
+Diagnostics:
+  Suppress: pp_file_not_found
+---
+Diagnostics:
+  Suppress: unknown_typename 
+---
+Diagnostics:
+  Suppress: undeclared_var_use
+---
+Diagnostics:
+  Suppress: unknown_typename_suggest
+---
+Diagnostics:
+  Suppress: implicit-function-declaration
+---
+Diagnostics:
+  Suppress: invalid_suffix_constant

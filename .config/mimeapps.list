@@ -1,0 +1,47 @@
+[Added Associations]
+application/octet-stream=dl_dev.desktop;
+application/pdf=firefox.desktop;
+application/vnd.debian.binary-package=deb.desktop;dl_dev.desktop;com.github.donadigo.eddy.desktop;gnome-software-local-file.desktop;
+application/x-debian-package=dl_dev.desktop;com.github.donadigo.eddy.desktop;gnome-software-local-file.desktop;
+application/x-desktop=nvim.desktop;
+application/x-ms-dos-executable=wine-extension-msp.desktop;
+application/x-wine-extension-ini=nvim.desktop;
+application/xhtml+xml=userapp-Firefox-ARYRR1.desktop;firefox.desktop;
+font/ttf=org.gnome.font-viewer.desktop;
+image/gif=firefox.desktop;
+image/png=gimp.desktop;feh.desktop;display-im6.q16.desktop;org.gnome.eog.desktop;firefox.desktop;
+image/x-portable-pixmap=display-im6.q16.desktop;
+text/css=nvim.desktop;firefox.desktop;
+text/csv=nvm.desktop;wine-extension-txt.desktop;
+text/html=userapp-Firefox-ARYRR1.desktop;firefox.desktop;
+text/markdown=appimagekit_bf40b58f7980f8902d4b685a5bb6eddc-Obsidian.desktop;nvim.desktop;
+text/plain=nvim.desktop;
+test/json=nvim.desktop;
+text/x-c++src=nvim.desktop;
+text/x-chdr=nvim.desktop;
+text/x-log=nvim.desktop;
+x-scheme-handler/http=userapp-Firefox-ARYRR1.desktop;firefox.desktop;
+x-scheme-handler/https=userapp-Firefox-ARYRR1.desktop;firefox.desktop;
+application/zip=org.gnome.Nautilus.desktop;
+image/vnd.microsoft.icon=display-im6.q16.desktop;feh.desktop;
+
+[Default Applications]
+application/vnd.debian.binary-package=deb.desktop;
+application/x-extension-htm=userapp-Firefox-ARYRR1.desktop
+application/x-extension-html=userapp-Firefox-ARYRR1.desktop
+application/x-extension-shtml=userapp-Firefox-ARYRR1.desktop
+application/x-extension-xht=userapp-Firefox-ARYRR1.desktop
+application/x-extension-xhtml=userapp-Firefox-ARYRR1.desktop
+application/xhtml+xml=userapp-Firefox-ARYRR1.desktop
+image/gif=firefox.desktop
+image/jpeg=firefox.desktop
+image/png=firefox.desktop
+text/html=userapp-Firefox-ARYRR1.desktop
+text/plain=nvim.desktop;code.desktop;
+text/x-c++src=nvim.desktop
+text/x-chdr=nvim.desktop
+x-scheme-handler/chrome=userapp-Firefox-ARYRR1.desktop
+x-scheme-handler/eclipse+command x-scheme-handler/eclipse+mpc=_home_maxine_Software_ccs1250_ccs_eclipse_.desktop
+x-scheme-handler/http=userapp-Firefox-ARYRR1.desktop
+x-scheme-handler/https=userapp-Firefox-ARYRR1.desktop
+x-scheme-handler/discord-402572971681644545=discord-402572971681644545.desktop
