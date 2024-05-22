@@ -25,7 +25,6 @@ schenes:
     primary:
       background: '#1e2127'
       foreground: '#abb2bf'
-    # Normal colors
     normal:
       black:   '#5c6370'
       red:     '#e06c75'
@@ -35,8 +34,6 @@ schenes:
       magenta: '#c678dd'
       cyan:    '#56b6c2'
       white:   '#abb2bf'
-
-    # Bright colors
     bright:
       black:   '#5c6370'
       red:     '#e06c75'
@@ -74,5 +71,14 @@ shell:
 env:
   WINIT_X11_SCALE_FACTOR: "2.25"
 key_bindings: 
-  # Make <C-BS> work:
-  - { key: Back, mods: Control, chars: "\x17" }
+  - { key: Back, mods: Control, chars: "\x17" } # Make <C-BS> work:
+hints:
+  enabled:
+    - regex: "(mailto:|gemini:|gopher:|https:|http:|news:|file:|git:|ssh:|ftp:)\
+            [^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩`]+"
+      command: xdg-open
+      post_processing: true
+      hyperlinks: true
+      mouse:
+        enabled: true
+        mods: Control

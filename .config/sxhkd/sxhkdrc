@@ -1,10 +1,9 @@
-#
-# wm independent hotkeys
-#
-
-# program launcher
+# ----- Program Launchers and Programs -----
 ctrl + space
 	rofi -show combi
+
+alt + space
+	bolt --rofi-search
 
 super + t
 	alacritty
@@ -12,37 +11,48 @@ super + t
 super + shift + s
     flameshot gui
 
-super + d
-	discord
+super + c
+	clipmenu
 
-super + XF86AudioMute
-    setxkbmap us 
+# ----- Special Key Functions -----
 
-super + XF86AudioLowerVolume
-    setxkbmap us -variant colemak_dh
+# PrtSc
+Print 
+	flameshot gui
 
-XF86MonBrightness{Up,Down}
+# Brightness Up/Down
+XF86MonBrightness{Up,Down} 
     light { -As, -Us} "sysfs/backlight/intel_backlight" 5
 
-XF86Audio{RaiseVolume,LowerVolume}
+# Volume Up/Down
+XF86Audio{RaiseVolume,LowerVolume} 
 	pactl -- set-sink-volume @DEFAULT_SINK@ {+,-}5%
 
-XF86AudioMute
+# Audio Mute
+XF86AudioMute 
 	~/Documents/scripts/toggle_mute_light.sh
 
-XF86AudioMicMute
+# Mic Mute --> Do not Disturb
+XF86AudioMicMute 
 	~/Documents/scripts/toggle_dnd.sh
 
-XF86Display
+# Screen --> Play/Pause
+XF86Display 
 	playerctl play-pause
 
+# Change layout to QWERTY
+super + XF86AudioMute 
+    setxkbmap us 
+
+# Change layout to Colemak dh
+super + XF86AudioLowerVolume 
+    setxkbmap us -variant colemak_dh
+
 # make sxhkd reload its configuration files:
-super + Escape
+super + Escape 
 	pkill -USR1 -x sxhkd
 
-#
-# bspwm hotkeys
-#
+# ----- bspwm hotkeys -----
 
 # quit/restart bspwm
 super + alt + {q,r}
@@ -56,17 +66,11 @@ super + {_,shift + }w
 super + m
 	bspc desktop -l next
 
-# send the newest marked node to the newest preselected node
-super + y
-	bspc node newest.marked.local -n newest.!automatic.local
-
 # swap the current node and the biggest window
 super + g
 	bspc node -s biggest.window
 
-#
-# state/flags
-#
+# ----- State/Flags -----
 
 # set the window state
 super + {a,shift + a,s,f}
@@ -76,17 +80,13 @@ super + {a,shift + a,s,f}
 super + {z,x,v}
 	/home/maxine/Documents/scripts/mark_node.sh {locked,sticky,private}
 
-super + c
-	clipmenu
-
 # set the stacking layer of the selected window
-super + ctrl + {Home,End,Insert}
-	bspc node -l {below,normal,above}
-#	
-# focus/swap
-#
+super + {Home,End,Insert}
+	bspc node -l {below,above,normal}
 
-# focus the node in the given direction
+# ----- Focus/Swap -----
+
+# move the node in the given direction
 super + {_,shift + }{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
 
@@ -95,7 +95,7 @@ super + {p,b,comma,period}
 	bspc node -f @{parent,brother,first,second}xorg-server-xephyr.
 
 # focus the next/previous window in the current desktop
-super + {_,shift + }c
+super + {_,shift + }n
 	bspc node -f {next,prev}.local.!hidden.window
 
 # focus the next/previous desktop in the current monitor
@@ -120,10 +120,7 @@ super + {_,shift + }{1-9,0}
 super + ctrl + {j,l}
 	bspc node -f {next,prev}.local.!hidden.window
 	
-#
-# preselect
-#
-
+# ----- Preselect -----
 
 # preselect the ratio
 super + ctrl + {1-9}
@@ -137,18 +134,15 @@ super + ctrl + space
 super + ctrl + shift + space
 	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
 
-#
-# move/resize
-#
-
+# ----- Move/Resize -----
 
 # expand/contract a window 
 super + alt {h,j,k,l}
-	bspc node -z {left -20 0 || bspc node -z right -20 0, \
-                bottom 0 20 || bspc node -z top 0 20,\
-                top 0 -20 || bspc node -z bottom 0 -20,\
-                right 20 0 || bspc node -z left 20 0}
+	bspc node -z {left -40 0 || bspc node -z right -40 0, \
+                bottom 0 40 || bspc node -z top 0 40,\
+                top 0 -40 || bspc node -z bottom 0 -40,\
+                right 40 0 || bspc node -z left 40 0}
 
 # move a floating window
 super + {Left,Down,Up,Right}
-	bspc node -v {-20 0,0 20,0 -20,20 0}
+	bspc node -v {-50 0,0 50,0 -50,50 0}

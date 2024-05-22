@@ -5,8 +5,8 @@ function __ctrl+z.fish -d "Keybind function for ctrl+z.fish. Not meant to be cal
         set -l reset (set_color normal)
         set -l color_command (set_color $fish_color_command)
         # https://gist.github.com/fnky/458719343aabd01cfb17a3a4f7296797#cursor-controls
-        printf "\x1b[0G" # Move cursor to the start of the line (0'th column).
-        printf "\x1b[2K" # Clear the current line, to erase the leftover (partial) prompt.
+        # printf "\x1b[0G" # Move cursor to the start of the line (0'th column).
+		# printf "\x1b[2K" # Clear the current line, to erase the leftover (partial) prompt.
         printf "%shint%s: this keybind, i.e. %s%s%s, only does something, if there are >= 1 background %sjobs%s ;)\n" \
             (set_color cyan) $reset \
             $color_command (status function) $reset \
@@ -41,7 +41,6 @@ function __ctrl+z.fish -d "Keybind function for ctrl+z.fish. Not meant to be cal
             set -l job_id_color $magenta
             printf '%s%2s%s %s %s %s%s%s %s%s\n' $job_id_color $job $reset $group $cpu $state_color $state $reset (printf (echo $command | fish_indent --ansi)) $reset
         end | fzf --ansi --height=~40% | string match --regex --groups-only '^(\d+)' | read job_id
-        # echo $selection
     end
 
     # TODO: improve fzf style

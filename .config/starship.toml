@@ -1,5 +1,5 @@
 format = '''
-(dimmed cyan)$username in (bold white)$directory $c$lua$zig$time$cmd_duration$status
+(dimmed cyan)$username in (bold white)$directory $c$lua$zig$time$cmd_duration$status$jobs
 [└─>](dimmed cyan)'''
 
 
@@ -9,6 +9,9 @@ style_root = "black bold"
 format = "[$user]($style)"
 disabled = false
 show_always = true
+
+[jobs]
+symbol = "󱐋"
 
 [c]
 symbol = " "

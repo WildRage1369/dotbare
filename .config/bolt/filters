@@ -1,5 +1,8 @@
 node_modules
 package.json
+Cache
+cache
+lib
 
 .git
 .gitignore
@@ -9,11 +12,13 @@ README.md
 icons
 themes
 fonts
+git
+
+matlab
 ccs1250
 aesprite
 Unity
 dotbare
-git
 
 .ssh
 .mame

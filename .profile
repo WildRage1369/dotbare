@@ -28,7 +28,4 @@ fi
 . "$HOME/.cargo/env"
 
 xinput set-prop 13 "Coordinate Transformation Matrix" 2.5 0 0 0 2.5 0 0 0 1 &
-primenote &
-/usr/lib/x86_64-linux-gnu/ukui-polkit/polkit-ukui-authentication-agent-1 &
-xrdb -merge ~/.Xresources &
-
+# /usr/lib/x86_64-linux-gnu/ukui-polkit/polkit-ukui-authentication-agent-1 &

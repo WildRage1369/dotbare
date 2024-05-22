@@ -42,6 +42,7 @@ tree-sitter-zig = "scm"
 tree-sitter-json = "scm"
 "hover.nvim" = "scm"
 tree-sitter-css = "scm"
+tree-sitter-readline = "scm"
 
 [plugins."marks.nvim" ]
 version = "scm"
