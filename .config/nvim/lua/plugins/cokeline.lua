@@ -20,6 +20,24 @@ local cmpnents = {
 				end
 			end,
 		},
+		tab_sep_left = {
+			text = " ",
+			fg = function(buffer)
+				if buffer.is_focused then
+					return get_hex('Normal', 'fg')
+				else
+					return get_hex('ColorColumn', 'bg')
+				end
+			end,
+
+			bg = function(buffer)
+				if buffer.is_focused then
+					return get_hex('Normal', 'bg')
+				else
+					return get_hex('ColorColumn', 'fg')
+				end
+			end,
+		},
         icon = {
             text = function(buffer)
                 if buffer.diagnostics.errors == 0 and buffer.diagnostics.warnings == 0 then
@@ -79,6 +97,26 @@ local cmpnents = {
         },
 		sep_right = {
 			text = "",
+			fg = function(buffer)
+				if buffer.is_focused then
+					return get_hex('Normal', 'fg')
+				else
+					return get_hex('ColorColumn', 'bg')
+				end
+			end,
+
+			bg = function(buffer)
+				if buffer.is_focused then
+					return get_hex('Normal', 'bg')
+				else
+					return get_hex('ColorColumn', 'fg')
+				end
+			end,
+			truncation = { priority = 1}
+		},
+
+		tab_sep_right = {
+			text = "",
 			fg = function(buffer)
 				if buffer.is_focused then
 					return get_hex('Normal', 'fg')

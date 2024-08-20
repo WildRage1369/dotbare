@@ -1,6 +1,8 @@
 format = '''
-(dimmed cyan)$username in (bold white)$directory $c$lua$zig$time$cmd_duration$status$jobs
-[└─>](dimmed cyan)'''
+(dimmed cyan)$username in (bold white)$directory $symbol$c$lua$zig$time$cmd_duration$status$jobs
+[└─$character](dimmed cyan)'''
+
+right_format = '''$git_branch$git_metrics$git_status'''
 
 
 [username]
@@ -37,3 +39,12 @@ detect_folders = ['zig']
 [time]
 disabled = false
 time_format = '%-I:%M.%-S'
+
+[git_status]
+up_to_date = ""
+
+[character]
+vimcmd_symbol = '[](bold green)'
+vimcmd_replace_one_symbol = '[](bold purple)'
+vimcmd_replace_symbol = '[](bold purple)'
+vimcmd_visual_symbol = '[](bold yellow)'

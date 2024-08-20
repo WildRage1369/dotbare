@@ -69,9 +69,17 @@ colors: *gruvbox_material_medium_dark
 shell:
   program: /usr/bin/fish
 env:
-  WINIT_X11_SCALE_FACTOR: "2.25"
+  WINIT_X11_SCALE_FACTOR: "1.95"
 key_bindings: 
-  - { key: Back, mods: Control, chars: "\x17" } # Make <C-BS> work:
+  - { key: Back, mods: Control, chars: "\x17" }         # Make <C-BS> work
+  - { key: Backslash, mods: Super, chars: "\x01\x7c" }  # Tmux: split vertically 
+  - { key: Minus, mods: Super, chars: "\x01\x2d" }      # Tmux: split horizontally
+  - { key: N, mods: Super, chars: "\x01\x63" }          # Tmux: new      window
+  - { key: RBracket, mods: Super, chars: "\x01\x6e" }   # Tmux: next     window 
+  - { key: LBracket, mods: Super, chars: "\x01\x70" }   # Tmux: previous window
+  - { key: Semicolon, mods: Super, chars: "\x01\x6f" }  # Tmux: next     pane
+  - { key: Space, mods: Super, chars: "\x01\x20" }      # Tmux: next     layout
+  - { key: Z, mods: Control, chars: "\u001A" }      # Tmux: next     layout
 hints:
   enabled:
     - regex: "(mailto:|gemini:|gopher:|https:|http:|news:|file:|git:|ssh:|ftp:)\

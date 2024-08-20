@@ -6,7 +6,7 @@ alt + space
 	bolt --rofi-search
 
 super + t
-	alacritty
+	alacritty -e tmux 
 
 super + shift + s
     flameshot gui
@@ -14,11 +14,29 @@ super + shift + s
 super + c
 	clipmenu
 
+# ----- Tabbed -----
+
+# add to tabbed container
+ctrl + alt + {h,j,k,l}
+    tabc attach $(bspc query -N -n) {$(bspc query -N -n west),$(bspc query -N -n south),$(bspc query -N -n north),$(bspc query -N -n east)}
+
+# create/remove from tabbed container
+super + z 
+    /home/maxine/Documents/scripts/tabbed_attach_detach.sh
+
+# toggle autoattach in tabbed container
+super + shift + z 
+    tabc autoattach $(bspc query -N -n)
+
 # ----- Special Key Functions -----
+
+# super + PrtSc
+super + Print
+	flameshot gui
 
 # PrtSc
 Print 
-	flameshot gui
+	flameshot launcher
 
 # Brightness Up/Down
 XF86MonBrightness{Up,Down} 
@@ -28,6 +46,8 @@ XF86MonBrightness{Up,Down}
 XF86Audio{RaiseVolume,LowerVolume} 
 	pactl -- set-sink-volume @DEFAULT_SINK@ {+,-}5%
 
+super + XF86Audio{RaiseVolume,LowerVolume} 
+
 # Audio Mute
 XF86AudioMute 
 	~/Documents/scripts/toggle_mute_light.sh
@@ -36,9 +56,25 @@ XF86AudioMute
 XF86AudioMicMute 
 	~/Documents/scripts/toggle_dnd.sh
 
-# Screen --> Play/Pause
+# Screen --> Media Play/Pause
 XF86Display 
 	playerctl play-pause
+
+# Star --> NCspot playpause
+XF86Favorites
+	echo "playpause" | nc -U /run/user/1000/ncspot/ncspot.sock
+
+# Speech Bubble --> NCspot next
+XF86NotificationCenter
+	echo "next" | nc -U /run/user/1000/ncspot/ncspot.sock
+
+# Phone --> NCspot volume up 5
+XF86PickupPhone
+	echo "voldown 5" | nc -U /run/user/1000/ncspot/ncspot.sock
+
+# Hangup Phone --> NCspot volume down 5
+XF86HangupPhone
+	echo "volup 5" | nc -U /run/user/1000/ncspot/ncspot.sock
 
 # Change layout to QWERTY
 super + XF86AudioMute 
@@ -95,22 +131,22 @@ super + {p,b,comma,period}
 	bspc node -f @{parent,brother,first,second}xorg-server-xephyr.
 
 # focus the next/previous window in the current desktop
-super + {_,shift + }n
-	bspc node -f {next,prev}.local.!hidden.window
+# super + {_,shift + }n
+	# bspc node -f {next,prev}.local.!hidden.window
 
 # focus the next/previous desktop in the current monitor
-super + bracket{left,right}
-	bspc desktop -f {prev,next}.local
+# super + bracket{left,right}
+	# bspc desktop -f {prev,next}.local
 
 # focus the last node/desktop
 super + {grave,Tab}
 	bspc {node,desktop} -f last
 
 # focus the older or newer node in the focus history
-super + {o,i}
-	bspc wm -h off; \
-	bspc node {older,newer} -f; \
-	bspc wm -h on
+# super + {o,i}
+	# bspc wm -h off; \
+	# bspc node {older,newer} -f; \
+	# bspc wm -h on
 
 # focus or send to the given desktop
 super + {_,shift + }{1-9,0}
@@ -143,6 +179,12 @@ super + alt {h,j,k,l}
                 top 0 -40 || bspc node -z bottom 0 -40,\
                 right 40 0 || bspc node -z left 40 0}
 
+# expand/contract a window (small steps)
+super + shift + alt {h,j,k,l}
+	bspc node -z {left -40 0 || bspc node -z right -40 0, \
+                bottom 0 40 || bspc node -z top 0 40,\
+                top 0 -40 || bspc node -z bottom 0 -40,\
+                right 40 0 || bspc node -z left 40 0}
 # move a floating window
 super + {Left,Down,Up,Right}
 	bspc node -v {-50 0,0 50,0 -50,50 0}

@@ -13,6 +13,9 @@ icons
 themes
 fonts
 git
+std
+include
+lib*
 
 matlab
 ccs1250

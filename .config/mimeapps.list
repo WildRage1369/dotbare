@@ -24,6 +24,7 @@ x-scheme-handler/http=userapp-Firefox-ARYRR1.desktop;firefox.desktop;
 x-scheme-handler/https=userapp-Firefox-ARYRR1.desktop;firefox.desktop;
 application/zip=org.gnome.Nautilus.desktop;
 image/vnd.microsoft.icon=display-im6.q16.desktop;feh.desktop;
+application/x-csh=nvim.desktop;
 
 [Default Applications]
 application/vnd.debian.binary-package=deb.desktop;

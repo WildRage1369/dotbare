@@ -1,9 +1,14 @@
+local capabilities = vim.tbl_deep_extend(
+    "force",
+    vim.lsp.protocol.make_client_capabilities(),
+    require("cmp_nvim_lsp").default_capabilities()
+)
 require("mason-lspconfig").setup_handlers({
     -- The first entry (without a key) will be the default handler
     -- and will be called for each installed server that doesn't have
     -- a dedicated handler.
+
     function(server_name) -- default handler (optional)
-        local capabilities = require("cmp_nvim_lsp").default_capabilities()
         require("lspconfig")[server_name].setup({
             capabilities = capabilities,
         })
@@ -11,6 +16,7 @@ require("mason-lspconfig").setup_handlers({
 
     ["lua_ls"] = function()
         require("lspconfig").lua_ls.setup({
+            capabilities = capabilities,
             settings = {
                 Lua = {
                     diagnostics = {
@@ -22,17 +28,21 @@ require("mason-lspconfig").setup_handlers({
         })
     end,
     ["zls"] = function()
-        require("lspconfig").zls.setup({
+        require("lspconfig")["zls"].setup({
+            capabilities = capabilities,
             settings = { zls = { warn_style = true } },
         })
     end,
 
-	["pyright"] = function()
-		require("lspconfig").pyright.setup({
-			settings = { pyright = {
-				reportPossiblyUnboundVariable = false,
-				reportUnboundVariable = false,
-			} }
-		})
-	end,
+    ["pyright"] = function()
+        require("lspconfig").pyright.setup({
+            capabilities = capabilities,
+            settings = {
+                pyright = {
+                    reportPossiblyUnboundVariable = false,
+                    reportUnboundVariable = false,
+                },
+            },
+        })
+    end,
 })

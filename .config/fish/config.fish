@@ -1,9 +1,10 @@
+# ----- login shell commands -----
 if status --is-login
-	# xinput set-prop 13 "Coordinate Transformation Matrix" 2.5 0 0 0 2.5 0 0 0 1 &
-# 	primenote &
-# 	/usr/lib/x86_64-linux-gnu/ukui-polkit/polkit-ukui-authentication-agent-1 &
-# 	xrdb -merge ~/.Xresources &
+	xinput set-prop 13 "Coordinate Transformation Matrix" 2.5 0 0 0 2.5 0 0 0 1 &
 end
+
+# ----- fish configuration -----
+bind \cz 'fg 2>/dev/null; commandline -f repaint'
 
 # ----- aliases -----
 
@@ -18,10 +19,66 @@ alias lla="lsd -la"
 alias lt="lsd -t"
 alias dots="dotbare fedit"
 alias dot="dotbare"
-alias fzfind="fzf --border=rounded --margin=1,3 --info=right --preview='batcat --color=always {} --style=plain' --preview-window=up,10"
+alias fzfind="fzf --border=rounded --margin=1,3 --info=right --preview='batcat --color=always {} --style=plain' --preview-window=up,10 --query"
+alias cam="git commit -am"
+
+function fznvim 
+	if test "$argv[1]" = "-h"
+		echo (set_color -o)"fznvim" (set_color normal)(set_color -i)"[query]"(set_color normal)
+		echo "Runs fzf and opens result in nvim, with optional query for fzf"
+		return
+	else if test "$argv[1]" != ""
+		set -f fzf_result $(fzf --border=rounded --margin=1,3 --info=right --preview='batcat --color=always {} --style=plain' --preview-window=up,10 --query $argv)
+	else 
+		set -f fzf_result $(fzf --border=rounded --margin=1,3 --info=right --preview='batcat --color=always {} --style=plain' --preview-window=up,10)
+	end
+	if test "$fzf_result" != ""
+		nvim $fzf_result
+	else
+		echo "Search Aborted"
+	end
+end
 
 function fzls
-	ls -1 --classic $argv | fzf
+	if test "$argv[1]" = "-h"
+		echo (set_color -o)"fzls" (set_color normal)(set_color -i)"[directory] [query]"(set_color normal)
+		echo "Runs fzf on ls's output of [directory] (defaults to cwd if not given) with optional query for fzf"
+		return
+	else if test "$argv[2]" != ""
+		ls -1 --classic $argv[1] | fzf --query $argv[2]
+	else
+		ls -1 --classic $argv[1] | fzf
+	end
+end
+
+function fzdot
+	if test "$argv[1]" = "-h"
+		echo (set_color -o)"fzdot" (set_color normal)(set_color -i)" [query]"(set_color normal)
+		echo "Runs fzf on ls's output of ~/.config and opens result in nvim, with optional query for fzf"
+		return
+	else if test "$argv[1]" != ""
+		set -f fzf_result $(find ~/.config/ | fzf --query $argv[1])
+	else
+		set -f fzf_result $(find ~/.config/ | fzf)
+	end
+	if test "$fzf_result" != ""
+		nvim $fzf_result
+	else
+		echo "Search Aborted"
+	end
+end
+
+function fzcd
+	if test "$argv[1]" = "-h"
+		echo (set_color -o)"fzcd" (set_color normal)(set_color -i)"[directory] "(set_color normal)
+		echo "Runs fzf on ls's output of [directory] (defaults to cwd if not given) with optional query for fzf and cd's into it"
+		return
+	else if test "$argv[2]" != ""
+		set -f fzf_result $(ls -1 --classic $argv[1] | fzf --query $argv[2])
+	else
+		set -f fzf_result $(ls -1 --classic $argv[1] | fzf)
+	end
+	cd $fzf_result
 end
 
 function lsgrep
@@ -32,13 +89,12 @@ function lsgrep
 	end
 end
 
+
 # ----- program configuration loading -----
 
 starship init fish | source
 zoxide init fish --cmd cd | source
-fzf --fish | source
 source ~/Software/lscolors.csh
-
 
 set NVM_DIR "([ -z "$XDG_CONFIG_HOME-" ] && printf %s "$HOME/.nvm" ||
 printf %s "$XDG_CONFIG_HOME/nvm")"
@@ -63,5 +119,4 @@ else
 	end
 end
 # <<< conda initialize <<<
-
 

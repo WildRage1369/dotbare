@@ -1,7 +1,5 @@
-
 local rocks_config = {
     rocks_path = vim.env.HOME .. "/.local/share/nvim/rocks",
-    luarocks_binary = vim.env.HOME .. "/.local/share/nvim/rocks/bin/luarocks",
 }
 
 vim.g.rocks_nvim = rocks_config
@@ -24,7 +22,6 @@ local luarocks_cpath = {
 package.cpath = package.cpath .. ";" .. table.concat(luarocks_cpath, ";")
 
 vim.opt.runtimepath:append(vim.fs.joinpath(rocks_config.rocks_path, "lib", "luarocks", "rocks-5.1", "*", "*"))
-
 
 -- local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 -- if not vim.loop.fs_stat(lazypath) then

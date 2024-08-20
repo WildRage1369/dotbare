@@ -1,13 +1,10 @@
 require("hover").setup({
-    init = function()
-        -- Require providers
-        require("hover.providers.lsp")
-        -- require('hover.providers.gh')
-        -- require('hover.providers.gh_user')
-        -- require('hover.providers.jira')
-        -- require('hover.providers.dap')
-        require('hover.providers.man')
-        require('hover.providers.dictionary')
-    end,
-	mouse_delay = 500
+	   init = function()
+	       require("hover.providers.lsp")
+		   require('hover.providers.diagnostic')
+		   require('hover.providers.fold_preview')
+	   end,
+	title = false,
+	preview_opts = { border = "none" },
+	mouse_delay = 500,
 })

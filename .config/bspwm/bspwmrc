@@ -18,19 +18,21 @@ bspc rule -a firefox:Toolkit state=floating sticky=on
 bspc rule -a dunst focus=off
 bspc rule -a polkit-ukui-authentication-agent-1 state=floating 
 bspc rule -a PrimeNote state=floating 
-bspc rule -a polybar state=sticky
+bspc rule -a polybar state=floating sticky=on
 bspc rule -a steam:steamwebhelper state=hidden
 
 # dex -a
-bolt --watch
+touch /tmp/historylist
+bolt --generate
 picom -b
 polybar mainbar -r &
 polybar offbar -r &
 feh --bg-scale /home/maxine/Documents/Pictures/Firefox_wallpaper.png &
+touchegg &
 flameshot &
 clipmenud &
 primenote &
 bash /home/maxine/.config/bspwm/bspwm_colors.sh &
-# screen -S httpserver http-server Documents/Neocities/ &
-/home/maxine/Software/ArmCord-3.1.4_89d476e8bebc68418c2f53a1d53ed7f4.AppImage &
+/home/maxine/Software/ArmCord*.AppImage &
+/home/maxine/Software/beeper*.AppImage &
 /home/maxine/Software/hideIt.sh -N "^offbar\$" -d bottom -w -r 1420x2400+1000+-80 -s 6 -i 0.1 -p 8
