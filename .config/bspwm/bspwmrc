@@ -15,6 +15,7 @@ bspc config gapless_monocle      true
 bspc rule -a ArmCord desktop='^2'
 bspc rule -a Beeper destop='^2'
 bspc rule -a firefox:Toolkit state=floating sticky=on
+bspc rule -a zen:Toolkit state=floating sticky=on
 bspc rule -a dunst focus=off
 bspc rule -a polkit-ukui-authentication-agent-1 state=floating 
 bspc rule -a PrimeNote state=floating 

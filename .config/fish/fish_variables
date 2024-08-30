@@ -17,6 +17,7 @@ SETUVAR F_EXCLUDE:\x5e/tmp/\x2e\x2b
 SETUVAR --export GDK_DPI_SCALE:1
 SETUVAR --export KF5Su_DIR:/usr/lib/x86_64\x2dlinux\x2dgnu/libexec/kf5/
 SETUVAR --export LS_COLORS:
+SETUVAR --export --path PATH:/home/maxine/micromamba/bin\x20/home/maxine/\x2elocal/share/nvm/v21\x2e5\x2e0/bin\x20/home/maxine/Software\x20/home/maxine/\x2ecargo/bin\x20/home/maxine/Software/zig\x2d0\x2e13\x2e0\x20/home/maxine/\x2espicetify\x20/home/maxine/Software/dotbare\x20/home/maxine/Software/zig\x20/home/maxine/\x2elocal/share/bob/nvim\x2dbin\x20/home/maxine/Software/lua\x2dlanguage\x2dserver/bin\x20/home/maxine/micromamba/condabin\x20/home/maxine/\x2efzf/bin\x20/home/maxine/micromamba/bin\x20/home/maxine/\x2elocal/bin\x20/usr/local/sbin\x20/usr/local/bin\x20/usr/sbin\x20/usr/bin\x20/sbin\x20/bin\x20/usr/games\x20/usr/local/games\x20/snap/bin\x20/home/maxine/\x2edotnet/tools
 SETUVAR --export --path RIPGREP_CONFIG_PATH:/home/maxine/\x2econfig/ripgreprc
 SETUVAR --export RUST_BACKTRACE:1
 SETUVAR --export SPOTIFY_CLIENT_ID:5ed8619ac6184d19ab58e8bfff656113
@@ -75,5 +76,5 @@ SETUVAR fish_pager_color_description:B3A06D\x1eyellow
 SETUVAR fish_pager_color_prefix:normal\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
 SETUVAR fish_pager_color_selected_background:\x2dr
-SETUVAR fish_user_paths:/home/maxine/\x2ecargo/bin\x1e/home/maxine/Software/zig\x2d0\x2e13\x2e0\x1e/home/maxine/\x2espicetify\x1e/home/maxine/Software/dotbare\x1e/home/maxine/Software/zig\x1e/home/maxine/\x2elocal/share/bob/nvim\x2dbin\x1e/home/maxine/Software/lua\x2dlanguage\x2dserver/bin\x1e/home/maxine/micromamba/condabin\x1e/home/maxine/\x2efzf/bin
+SETUVAR fish_user_paths:/home/maxine/zig/0\x2e13\x2e0/files\x1e/home/maxine/Software\x1e/home/maxine/\x2ecargo/bin\x1e/home/maxine/Software/zig\x2d0\x2e13\x2e0\x1e/home/maxine/\x2espicetify\x1e/home/maxine/Software/dotbare\x1e/home/maxine/Software/zig\x1e/home/maxine/\x2elocal/share/bob/nvim\x2dbin\x1e/home/maxine/Software/lua\x2dlanguage\x2dserver/bin\x1e/home/maxine/micromamba/condabin\x1e/home/maxine/\x2efzf/bin
 SETUVAR nvm_default_version:v21\x2e5\x2e0

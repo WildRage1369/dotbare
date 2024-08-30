@@ -1,6 +1,6 @@
 # ----- Program Launchers and Programs -----
 ctrl + space
-	rofi -show combi
+	rofi -show combi 
 
 alt + space
 	bolt --rofi-search

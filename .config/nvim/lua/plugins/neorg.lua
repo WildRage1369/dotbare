@@ -4,10 +4,13 @@ require("neorg").setup({
         ["core.latex.renderer"] = {},
         ["core.export.markdown"] = {
             config = {
-				extensions = "all",
+                extensions = "all",
             },
         },
         ["core.export"] = {},
+        ["core.itero"] = {},
+        ["core.promo"] = {},
+        ["core.todo-introspector"] = {},
         ["core.completion"] = { config = { engine = "nvim-cmp", name = "[Norg]" } },
         ["core.concealer"] = { -- Adds pretty icons to your documents
             config = {
@@ -41,13 +44,13 @@ require("neorg").setup({
         ["core.dirman"] = { -- Manages Neorg workspaces
             config = {
                 workspaces = {
+                    school = "~/School/2024-fall",
                     documents = "~/Documents/Neorg",
-                    school = "~/School/S24",
                 },
             },
         },
         ["core.keybinds"] = {
-            config = {
+            confg = {
                 hook = function(keybinds)
                     keybinds.remap_key("norg", "n", "<C-Space>", "<Leader>to")
                 end,

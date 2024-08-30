@@ -21,7 +21,7 @@ configuration {
 /*	drun-display-format: "{name} [<span weight='light' size='small'><i>({generic})</i></span>]";*/
 /*  combi-display-format: "{text}";*/
 /*	drun-url-launcher: "xdg-open";*/
-	/*disable-history: false;*/
+	disable-history: false;
 /*	ignored-prefixes: "";*/
 	sort: true;
 	sorting-method: "fzf";
@@ -30,7 +30,7 @@ configuration {
 /*	sidebar-mode: false;*/
 /*	hover-select: false;*/
 /*	eh: 1;*/
-/*	auto-select: false;*/
+	auto-select: false;
 /*	parse-hosts: false;*/
 /*	parse-known-hosts: true;*/
 	combi-modi: "window,drun";
@@ -43,12 +43,12 @@ configuration {
 /*	scroll-method: 0;*/
 	window-format: "{c}    {w}   {t}";
 /*	click-to-exit: true;*/
-	max-history-size: 0;
+	max-history-size: 100;
 	// combi-hide-mode-prefix: true;
-/*	matching-negate-char: '-' /* unsupported */;*/
+	matching-negate-char: '-';
 /*	cache-dir: ;*/
 /*	window-thumbnail: false;*/
-/*	drun-use-desktop-cache: false;*/
+	drun-use-desktop-cache: true;
 /*	drun-reload-desktop-cache: false;*/
 /*	normalize-match: false;*/
 /*	steal-focus: false;*/
@@ -78,7 +78,7 @@ configuration {
 /*	kb-remove-to-eol: "Control+k";*/
 /*	kb-remove-to-sol: "Control+u";*/
 /*	kb-accept-entry: "Control+j,Control+m,Return,KP_Enter";*/
-/*	kb-accept-custom: "Control+Return";*/
+	kb-accept-custom: "Control+Return";
 /*	kb-accept-custom-alt: "Control+Shift+Return";*/
 /*	kb-accept-alt: "Shift+Return";*/
 /*	kb-delete-entry: "Shift+Delete";*/
@@ -87,18 +87,18 @@ configuration {
 /*	kb-mode-complete: "Control+l";*/
 /*	kb-row-left: "Control+Page_Up";*/
 /*	kb-row-right: "Control+Page_Down";*/
-/*	kb-row-up: "Up,Control+p,ISO_Left_Tab";*/
-/*	kb-row-down: "Down,Control+n";*/
+	kb-row-up: "K,Up,Control+p,ISO_Left_Tab";
+	kb-row-down: "J,Down,Control+n";
 /*	kb-row-tab: "Tab";*/
-/*	kb-page-prev: "Page_Up";*/
-/*	kb-page-next: "Page_Down";*/
+	kb-page-prev: "Control+J,Page_Up";
+	kb-page-next: "Control+K,Page_Down";
 /*	kb-row-first: "Home,KP_Home";*/
 /*	kb-row-last: "End,KP_End";*/
 /*	kb-row-select: "Control+space";*/
 /*	kb-screenshot: "Alt+S";*/
 /*	kb-ellipsize: "Alt+period";*/
 /*	kb-toggle-case-sensitivity: "grave,dead_grave";*/
-/*	kb-toggle-sort: "Alt+grave";*/
+	kb-toggle-sort: "Alt+s";
 /*	kb-cancel: "Escape,Control+g,Control+bracketleft";*/
 /*	kb-custom-1: "Alt+1";*/
 /*	kb-custom-2: "Alt+2";*/

@@ -8,38 +8,35 @@ local cmp = require("cmp")
 
 vim.cmd([[packadd luasnip]])
 vim.cmd([[packadd lspkind.nvim]])
-vim.cmd([[packadd cmp-tabnine]])
+vim.cmd([[packadd supermaven-nvim]])
 
 local luasnip = require("luasnip")
 local lspkind = require("lspkind")
 local compare = require("cmp.config.compare")
 local cmp_autopairs = require("nvim-autopairs.completion.cmp")
 
-require("cmp_tabnine.config"):setup({
-    max_num_results = 2,
-})
+lspkind.init({ symbol_map = { Supermaven = "" } })
 
 local source_mapping = {
-    buffer = "[Buffer]",
+    buffer = "[Buf]",
     nvim_lsp = "[LSP]",
     nvim_lua = "[Lua]",
-    cmp_tabnine = "[TN]",
+    supermaven = "[SM]",
     path = "[Path]",
     latex_symbols = "[LaTeX]",
 }
 cmp.setup({
     snippet = {
         expand = function(args)
-            require("luasnip").lsp_expand(args.body)
+            luasnip.lsp_expand(args.body)
         end,
     },
-	experimental = {ghost_text = true},
+    -- experimental = {ghost_text = true},
     sorting = {
         priority_weight = 2,
         comparators = {
             compare.locality,
             compare.recently_used,
-            require("cmp_tabnine.compare"),
             compare.score,
             compare.offset,
             compare.order,
@@ -53,17 +50,6 @@ cmp.setup({
         format = function(entry, vim_item)
             vim_item.kind = lspkind.symbolic(vim_item.kind, { mode = "symbol" })
             vim_item.menu = source_mapping[entry.source.name]
-            if entry.source.name == "cmp_tabnine" then
-                local detail = (entry.completion_item.labelDetails or {}).detail
-                vim_item.kind = ""
-                if detail and detail:find(".*%%.*") then
-                    vim_item.kind = vim_item.kind .. " " .. detail
-                end
-
-                if (entry.completion_item.data or {}).multiline then
-                    vim_item.kind = vim_item.kind .. " " .. "[ML]"
-                end
-            end
             local maxwidth = 80
             vim_item.abbr = string.sub(vim_item.abbr, 1, maxwidth)
             return vim_item
@@ -89,7 +75,6 @@ cmp.setup({
                 fallback()
             end
         end, { "i", "s" }),
-
         ["<S-Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_prev_item()
@@ -104,9 +89,11 @@ cmp.setup({
                 if cmp.visible() and cmp.get_active_entry() then
                     if luasnip.expandable() then
                         luasnip.expand()
+                    -- elseif suggestion.has_suggestion() then
+                    --     suggestion.on_accept_suggestion()
                     else
                         cmp.confirm({
-							behavior = cmp.ConfirmBehavior.Replace,
+                            behavior = cmp.ConfirmBehavior.Replace,
                             select = true,
                         })
                     end
@@ -117,16 +104,15 @@ cmp.setup({
             end,
             s = cmp.mapping.confirm({ select = true }),
             c = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
-
         }),
     }),
     sources = cmp.config.sources({
         { name = "nvim_lsp" },
         { name = "luasnip" },
-        { name = "cmp_tabnine" },
+        { name = "supermaven" },
         { name = "buffer" },
         { name = "async_path" },
-		{ name = "neorg" },
+        { name = "neorg" },
         {
             name = "latex_symbols",
             option = {
@@ -138,6 +124,25 @@ cmp.setup({
     }),
 })
 
+cmp.setup.cmdline(":", {
+    mapping = cmp.mapping.preset.cmdline({
+        ["<cr>"] = {
+            c = cmp.mapping.confirm({ select = false }),
+        },
+    }),
+    sources = cmp.config.sources({
+        { name = "path" },
+    }, {
+        { name = "cmdline" },
+    }),
+    matching = { disallow_symbol_nonprefix_matching = false },
+})
 
+cmp.setup.cmdline({ "/", "?" }, {
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = {
+        { name = "buffer" },
+    },
+})
 
 cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())

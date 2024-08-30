@@ -9,7 +9,7 @@
 "rocks-treesitter.nvim" = "scm"
 "venn.nvim" = "scm"
 "gruvbox.nvim" = "2.0.0"
-neorg = "9.0.3"
+neorg = "9.1.1"
 nvim-autopairs = "scm"
 "mini.nvim" = "0.9.0"
 "mini.files" = "0.13.0"
@@ -18,7 +18,6 @@ nvim-autopairs = "scm"
 "mini.move" = "0.9.0"
 luasnip = { git = "L3MON4D3/LuaSnip", build = "make install_jsregexp", opt = true}
 "lspkind.nvim" = { git = "onsails/lspkind.nvim",  opt = true}
-cmp-tabnine = { git = "tzachar/cmp-tabnine", build = "./install.sh", opt = true }
 "conform.nvim" = "6.1.0"
 nvim-lspconfig = "0.1.8"
 "dressing.nvim" = "2.2.2"
@@ -147,7 +146,6 @@ config = {}
 [plugins."cinnamon.nvim"]
 git = "declancm/cinnamon.nvim"
 config.keymaps.basic = true
-# config.keymaps.extra = true
 rev = "v1.2.3"
 
 [plugins."gitsigns.nvim"]
@@ -165,6 +163,16 @@ rev = "v4.0.0"
 
 [plugins.nvim-dap-virtual-text]
 git = "thehamsta/nvim-dap-virtual-text"
+
+[plugins.supermaven-nvim]
+git = "supermaven-inc/supermaven-nvim"
+config.disable_inline_completion = true
+
+[plugins.cmp-cmdline]
+git = "hrsh7th/cmp-cmdline"
+
+[plugins.cmp-path]
+git = "hrsh7th/cmp-path"
 
 [config]
 plugins_dir = "plugins/"
